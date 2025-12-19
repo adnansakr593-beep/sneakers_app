@@ -1,0 +1,189 @@
+// import 'package:flutter/material.dart';
+// import 'package:sneakers_shop/models/shoe_model.dart';
+
+// // ignore: must_be_immutable
+// class ShoeTile extends StatelessWidget {
+//   ShoeModel shoeM;
+//   void Function() ontap;
+//   ShoeTile({super.key, required this.shoeM, required this.ontap});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       //     return Container(
+// //       width: 220,
+// //       margin: const EdgeInsets.only(left: 16, right: 8, bottom: 16),
+// //       padding: const EdgeInsets.all(16),
+// //       decoration: BoxDecoration(
+// //         color: Colors.grey[100],
+// //         borderRadius: BorderRadius.circular(24),
+// //       ),
+//       width: 300,
+//       padding: const EdgeInsets.all(16),
+//       margin: const EdgeInsets.only(left: 16, right: 8, bottom: 16),
+//       decoration: BoxDecoration(
+//         color: Colors.grey[100],
+//         borderRadius: BorderRadius.circular(24),
+//       ),
+
+//       child: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           Image.asset(shoeM.image, height: 268),
+
+//           Text(
+//             shoeM.name,
+//             maxLines: 1,
+//             overflow: TextOverflow.ellipsis,
+//             style: TextStyle(color: Colors.grey[600], fontSize: 18),
+//           ),
+
+//           Padding(
+//             padding: const EdgeInsets.only(left: 8),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Column(
+//                   mainAxisAlignment: MainAxisAlignment.start,
+//                   children: [
+//                     Padding(
+//                       padding: const EdgeInsets.symmetric(horizontal: 5),
+//                       child: Text(
+//                         maxLines: 2,
+//                         overflow: TextOverflow.ellipsis,
+//                         shoeM.desc,
+//                         style: TextStyle(
+//                           color: Colors.black,
+//                           fontSize: 24,
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                     ),
+
+//                     // SizedBox(height: 5,),
+//                     Text(
+//                       ' ${shoeM.price}\$',
+//                       style: TextStyle(color: Colors.grey),
+//                     ),
+//                   ],
+//                 ),
+
+//                 GestureDetector(
+//                   onTap: ontap,
+//                   child: Container(
+//                     padding: const EdgeInsets.all(20),
+//                     decoration: BoxDecoration(
+//                       color: Colors.black,
+//                       borderRadius: BorderRadius.only(
+//                         topLeft: const Radius.circular(12),
+//                         bottomRight: const Radius.circular(12),
+//                       ),
+//                     ),
+//                     child: const Icon(Icons.add, color: Colors.white),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+import 'package:flutter/material.dart';
+import 'package:sneakers_shop/models/shoe_model.dart';
+
+// ignore: must_be_immutable
+class ShoeTile extends StatelessWidget {
+  ShoeModel shoeM;
+  void Function() ontap;
+  ShoeTile({super.key, required this.shoeM, required this.ontap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 220,
+      margin: const EdgeInsets.only(left: 16, right: 8, bottom: 16),
+      padding: const EdgeInsets.only(left: 16),
+      decoration: BoxDecoration(
+        color: Colors.grey[100],
+        borderRadius: BorderRadius.circular(24),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // الصورة بحجم متناسب
+          Center(
+            child: Image.asset(
+              shoeM.image,
+              height: 280,
+              fit: BoxFit.contain,
+            ),
+          ),
+          const SizedBox(height: 12),
+
+          // اسم المنتج
+          Text(
+            shoeM.name,
+            style: TextStyle(
+              color: Colors.grey[700],
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+
+          const SizedBox(height: 6),
+
+          // الوصف
+          Text(
+            shoeM.desc,
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 13,
+            ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+
+          const SizedBox(height: 42),
+
+          // السعر وزر الإضافة
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '${shoeM.price} EGP',
+                style: const TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
+              GestureDetector(
+                onTap: ontap,
+                child: Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      bottomRight: Radius.circular(12),
+                    ),
+                  ),
+                  child: const Icon(
+                    Icons.add,
+                    color: Colors.white,
+                    size: 18,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
