@@ -63,7 +63,7 @@ class _ShopPageState extends State<ShopPage> {
 
           // hot picks
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.only(top:25 , left: 25,right: 25),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
