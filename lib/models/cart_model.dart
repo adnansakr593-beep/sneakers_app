@@ -25,13 +25,6 @@ final List<ShoeModel> shoes = [
     price: '2300',
   ),
 
-  // ShoeModel(
-  //   desc: 'Limited edition Nike Air Jordan with red accents and bold design.',
-  //   name: 'Nike Air Jordan Redline',
-  //   image: 'assets/images/09.png',
-  //   price: '2500',
-  // ),
-
   ShoeModel(
     desc: 'All-black premium Nike Air Jordan crafted with durable leather.',
     name: 'Nike Air Jordan Stealth',

@@ -10,8 +10,8 @@ class ShoeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 220,
-      margin: const EdgeInsets.only(left: 16, right: 8, bottom: 16),
+      width: 250,
+      margin: const EdgeInsets.only(left: 16, right: 8, bottom: 80,top: 55),
       padding: const EdgeInsets.only(left: 16),
       decoration: BoxDecoration(
         color: Colors.grey[100],
@@ -20,7 +20,6 @@ class ShoeTile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // الصورة بحجم متناسب
           Center(
             child: Image.asset(
               shoeM.image,
@@ -30,7 +29,6 @@ class ShoeTile extends StatelessWidget {
           ),
           const SizedBox(height: 12),
 
-          // اسم المنتج
           Text(
             shoeM.name,
             style: TextStyle(
@@ -44,7 +42,6 @@ class ShoeTile extends StatelessWidget {
 
           const SizedBox(height: 6),
 
-          // الوصف
           Text(
             shoeM.desc,
             style: const TextStyle(
@@ -57,7 +54,6 @@ class ShoeTile extends StatelessWidget {
 
           const SizedBox(height: 42),
 
-          // السعر وزر الإضافة
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
